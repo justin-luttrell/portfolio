@@ -18,7 +18,7 @@ const Image = () => {
     {
       file(relativePath: {eq: "JL-icon.png"}) {
         childImageSharp {
-          fixed(width: 116, height: 72) {
+          fixed(width: 69, height: 43) {
             ...GatsbyImageSharpFixed
           }
         }
