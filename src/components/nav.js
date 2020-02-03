@@ -37,8 +37,8 @@ class Nav extends React.Component {
 export default Nav;
 
 const NavWrapper = styled.nav`
-    position: absolute;
-    top: 0;
+    // position: absolute;
+    // top: 0;
     z-index: 1000;
     width: 100%;
     padding: 1vh 2vw;

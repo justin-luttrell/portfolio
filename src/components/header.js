@@ -1,20 +1,34 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
+// import { Link } from "gatsby"
 import React from "react"
-import Nav from './nav.js'
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
+import { useStaticQuery, graphql } from "gatsby"
+// import { css } from "@emotion/core"
 
 const HeaderWrapper = styled.header`
-  // background: white;
+  background: darkgray;
   margin-bottom: 1.45rem;
-  min-height: 85vh;
+  min-height: 30vh;
+  padding: 1.45rem 1.0875rem 1.45rem;
 `
 
-const Header = ({ siteTitle }) => (
-  <HeaderWrapper>
-    <Nav/>
-  </HeaderWrapper>
-)
+const Header = ({ siteTitle }) => {
+
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+
+  return(
+    <HeaderWrapper>
+      <h1>Hello World</h1>
+      {data.site.siteMetadata.title}
+    </HeaderWrapper>
+  )
+}
 
 export default Header
