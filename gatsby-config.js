@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Justin Luttrell`,
@@ -27,6 +31,14 @@ module.exports = {
         icon: `src/images/JL-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-emotion`
+    `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `4y0pzhpwoyt4`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      }
+    }
   ],
 }
