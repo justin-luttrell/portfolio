@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 // import { css } from "@emotion/core"
 
 const HeaderWrapper = styled.header`
-  background: darkgray;
+  background: #1392d11c;;
   margin-bottom: 1.45rem;
   min-height: 30vh;
   padding: 1.45rem 1.0875rem 1.45rem;
@@ -26,7 +26,7 @@ const Header = ({ siteTitle }) => {
   return(
     <HeaderWrapper>
       <h1>Hello World</h1>
-      {data.site.siteMetadata.title}
+      <p>{data.site.siteMetadata.title}</p>
     </HeaderWrapper>
   )
 }
